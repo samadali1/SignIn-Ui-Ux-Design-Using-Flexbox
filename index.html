@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Smoothflow</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./poppins.css">
+    <link rel="stylesheet" href="./oswald.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="aside" id="slide">
+            <div class="logo">
+                <p>
+                    <span><img src="./logo.png" height="35px;" width="35px;"></span><span style="color:#693697; font-weight:bold">Smooth</span><span style="color:#eb58e6; font-weight:bold;">Flow</span><sub style="font-size:30%; font-family:'Poppins'">beta</sub>
+                </p>
+            </div>
+            <div class="layer">
+                <p class="head">Let's automate</p>
+                <p class="bio">Amplify your business with powerful automations, AI driven chatbots & conversational forms all in one place
+                </p>
+                <p class="dots">
+                    <span class="dot dot0" onclick="slide()" ></span>
+                    <span class="dot dot1" onclick="slide1()"></span>
+                </p>
+                <div class="sBtns">
+                    <button>
+                        <i class="fa fa-facebook"></i>
+                    </button>
+                    <button>
+                        <i class="fa fa-linkedin"></i>
+                    </button>
+                    <button>
+                        <i class="fa fa-youtube-play"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="box1">
+                <a href="#">Don't have an account?</a>
+                <button>
+                    <i class="fa fa-rocket"></i> GET STARTED</button>
+            </div>
+            <div class="box2">
+                <div class="fArea">
+                    <p class="heading">Sign in to
+                        <span style="color:#693697; font-weight:bold">Smooth</span>
+                        <span style="color:#eb58e6; font-weight:bold;">Flow.</span>
+                    </p>
+                    <p class="info">Enter your details below</p>
+                    <form action="JavaScript:void(0)">
+                        <input class="input" type="email" placeholder="enter email address">
+                        <input class="input" type="password" placeholder="enter your password ">
+                        <p>
+                            <a href="#">forgot password?</a>
+                        </p>
+                        <button>
+                            <i class="fa fa-sign-in"></i> SIGN IN</button>
+                    </form>
+                    <div class="socials">
+                        <button class="fbBtn">
+                            <i class="fa fa-facebook" style="color:rgba(37, 101, 240, 0.767);"></i> FACEBOOK</button>
+                        <button class="gBtn">
+                            <i class="fa fa-google" style="color:rgba(253, 39, 39, 0.541);"></i> GOOGLE</button>
+                        <button class="tBtn">
+                            <i class="fa fa-twitter" style="color:rgb(89, 189, 255);"></i> TWITTER</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box3">
+                <button>
+                    <i class="fa fa-folder"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        function slide(){
+            document.getElementById("slide").style.background = 'url(./bg.jpg)'
+            document.getElementById("slide").style.backgroundRepeat = 'no-repeat'
+            document.getElementById("slide").style.backgroundSize = '100% 100%'
+        }
+        function slide1(){
+            document.getElementById("slide").style.background = 'url(./bg2.jpg)'
+            document.getElementById("slide").style.backgroundRepeat = 'no-repeat'
+            document.getElementById("slide").style.backgroundSize = '100% 100%'
+        }
+
+        var images = new Array('./bg.jpg', './bg2.jpg');
+        var nextimage = 0;
+        doSlideshow();
+
+        function doSlideshow() {
+            if (nextimage >= images.length) { nextimage = 0; }
+            $('.aside')
+                .css('background-image', 'url("' + images[nextimage++] + '")')
+                .fadeIn(0, function () {
+                    setTimeout(doSlideshow, 3000);
+                });
+        }
+
+    </script>
+
+</body>
+
+</html>
